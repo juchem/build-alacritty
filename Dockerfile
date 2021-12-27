@@ -3,16 +3,17 @@ FROM bitnami/minideb:unstable
 ENV VERSION="v0.9.0"
 
 RUN apt-get update
-RUN apt-get install -y --no-install-recommends ca-certificates
-RUN apt-get install -y --no-install-recommends libfreetype6-dev
-RUN apt-get install -y --no-install-recommends libfontconfig1-dev
-RUN apt-get install -y --no-install-recommends libxcb-xfixes0-dev
-RUN apt-get install -y --no-install-recommends libxkbcommon-dev
-RUN apt-get install -y --no-install-recommends git
-RUN apt-get install -y --no-install-recommends pkg-config
-RUN apt-get install -y --no-install-recommends python3
-RUN apt-get install -y --no-install-recommends cmake
-RUN apt-get install -y --no-install-recommends cargo
+RUN apt-get install -y --no-install-recommends \
+  ca-certificates \
+  libfreetype6-dev \
+  libfontconfig1-dev \
+  libxcb-xfixes0-dev \
+  libxkbcommon-dev \
+  git \
+  pkg-config \
+  python3 \
+  cmake \
+  cargo
 
 RUN apt autoremove --purge -y
 RUN apt-get clean -y

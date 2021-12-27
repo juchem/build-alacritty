@@ -5,4 +5,4 @@ git checkout -b "build-${VERSION}" FETCH_HEAD
 git clean -xfd
 
 cargo build --release
-cargo install builds --root /out
+cargo install alacritty --root /out
