@@ -3,13 +3,18 @@ A self-contained, sandboxed docker image that will build and install the
 the need to setup a `rust` developer environment, install unwanted packages in
 your machine or clutter it with build artifacts.
 
-**TL;DR**: install alacritty under `/usr/local`
+**TL;DR**: install alacritty under `~/opt` with (change `OUT_DIR` accordingly):
 ```
-docker run -it --rm -v /usr/local:/out bstlang/build-alacritty
+OUT_DIR="$HOME/opt"
+mkdir -p "${OUT_DIR}"
+docker run -it --rm -v "${OUT_DIR}:/out" bstlang/build-alacritty
+unset OUT_DIR
 ```
 
 A pre-built image can be found in [docker
-hub](https://hub.docker.com/r/bstlang/build-alacritty).
+hub](https://hub.docker.com/r/bstlang/build-alacritty). Note that when using
+the pre-built image there's **no need** to clone this repository. The
+repository is only needed when building the builder environment.
 
 Binaries will be installed into guest directory `/out`. Mount that directory
 with `-v host_dir:/out` to install it into some host directory.
