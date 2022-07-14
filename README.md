@@ -14,15 +14,16 @@ unset OUT_DIR
 A pre-built image can be found in [docker
 hub](https://hub.docker.com/r/bstlang/build-alacritty). Note that when using
 the pre-built image there's **no need** to clone this repository. The
-repository is only needed when building the builder environment.
+repository is only needed when building the image itself.
 
 Binaries will be installed into guest directory `/out`. Mount that directory
 with `-v host_dir:/out` to install it into some host directory.
 
 Choose the version to build by setting environment variable `VERSION` to the
-appropriate [revision tag](https://github.com/alacritty/alacritty/releases).
+appropriate [revision tag](https://github.com/alacritty/alacritty/releases)
+(defaults to `HEAD` for bleeding edge).
 
 Example:
 ```
-docker run -it --rm -v /usr/local:/out -e VERSION=HEAD bstlang/build-alacritty
+docker run -it --rm -v /usr/local:/out -e VERSION=v0.10.1 bstlang/build-alacritty
 ```

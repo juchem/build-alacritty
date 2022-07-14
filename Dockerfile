@@ -1,6 +1,6 @@
 FROM bitnami/minideb:unstable
 
-ENV VERSION="v0.9.0"
+ENV VERSION="HEAD"
 
 RUN apt-get update
 RUN apt-get install -y --no-install-recommends \
