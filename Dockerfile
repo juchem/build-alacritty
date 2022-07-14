@@ -1,5 +1,8 @@
 FROM bitnami/minideb:unstable
 
+ENV DEBIAN_PRIORITY=critical
+ENV DEBIAN_FRONTEND=noninteractive
+
 ENV VERSION="HEAD"
 
 RUN apt-get update
@@ -13,7 +16,7 @@ RUN apt-get install -y --no-install-recommends \
   pkg-config \
   python3 \
   cmake \
-  cargo
+  cargo rustc
 
 RUN apt autoremove --purge -y
 RUN apt-get clean -y
