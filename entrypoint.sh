@@ -12,6 +12,7 @@ build_alacritty() {
   git clean -xfd
 
   time cargo build --release
+  strip --strip-all target/release/alacritty
   mkdir -p /out/bin
   cp -f target/release/alacritty /out/bin/alacritty
 }
