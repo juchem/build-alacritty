@@ -9,8 +9,8 @@ build_alacritty() {
   git checkout -b "build-${VERSION}" FETCH_HEAD
   git clean -xfd
 
-  cargo build --release
-  cargo install alacritty --root /out "$@"
+  time cargo build --release
+  time cargo install alacritty --root /out "$@"
 }
 
 (set -x; build_alacritty "$@")
