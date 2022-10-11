@@ -11,6 +11,8 @@ docker run -it --rm -v "${OUT_DIR}:/out" bstlang/build-alacritty
 unset OUT_DIR
 ```
 
+The source code for this image can be found at [juchem/build-alacritty](https://github.com/juchem/build-alacritty).
+
 A pre-built image can be found in [docker
 hub](https://hub.docker.com/r/bstlang/build-alacritty). Note that when using
 the pre-built image there's **no need** to clone this repository. The
