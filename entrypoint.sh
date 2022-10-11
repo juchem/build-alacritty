@@ -10,10 +10,10 @@ build_alacritty() {
   git clean -xfd
 
   cargo build --release
-  cargo install alacritty --root /out
+  cargo install alacritty --root /out "$@"
 }
 
-(set -x; build_alacritty)
+(set -x; build_alacritty "$@")
 
 cat <<EOF
 
