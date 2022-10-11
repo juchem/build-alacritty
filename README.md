@@ -6,8 +6,9 @@ your machine or clutter it with build artifacts.
 **TL;DR**: install alacritty under `~/opt` with (change `OUT_DIR` accordingly):
 ```
 OUT_DIR="$HOME/opt"
+VERSION=v0.10.1
 mkdir -p "${OUT_DIR}"
-docker run -it --rm -v "${OUT_DIR}:/out" bstlang/build-alacritty
+docker run -it --rm -v "${OUT_DIR}:/out" -e "VERSION=${VERSION}" bstlang/build-alacritty
 unset OUT_DIR
 ```
 
@@ -27,5 +28,5 @@ appropriate [revision tag](https://github.com/alacritty/alacritty/releases)
 
 Example:
 ```
-docker run -it --rm -v /usr/local:/out -e VERSION=v0.10.1 bstlang/build-alacritty
+docker run -it --rm -v /usr/local:/out bstlang/build-alacritty
 ```
