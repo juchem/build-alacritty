@@ -12,7 +12,8 @@ build_alacritty() {
   git clean -xfd
 
   time cargo build --release
-  time cargo install alacritty --root /out --force "$@"
+  mkdir -p /out/bin
+  cp -f target/release/alacritty /out/bin/alacritty
 }
 
 (set -x; build_alacritty "$@")
