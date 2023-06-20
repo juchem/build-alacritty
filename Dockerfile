@@ -1,4 +1,4 @@
-FROM bitnami/minideb:unstable
+FROM debian:testing-slim
 
 ENV DEBIAN_PRIORITY=critical
 ENV DEBIAN_FRONTEND=noninteractive
