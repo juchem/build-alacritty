@@ -19,11 +19,13 @@ build: image
 	mkdir -p out \
 		&& docker run -it --rm \
 			-v "`pwd`/out:/out" \
+			-e "ALACRITTY_VERSION=$${ALACRITTY_VERSION:-HEAD}" \
 				build-alacritty
 
 interactive: image
 	mkdir -p out \
 		&& docker run -it --rm \
 			-v "`pwd`/out:/out" \
+			-e "ALACRITTY_VERSION=$${ALACRITTY_VERSION:-HEAD}" \
 			--entrypoint bash \
 				build-alacritty

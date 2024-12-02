@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-build_version="${VERSION:-HEAD}"
+build_version="${ALACRITTY_VERSION:-HEAD}"
 
 build_alacritty() {
   apt-get update

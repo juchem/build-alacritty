@@ -19,15 +19,18 @@ repository is only needed when building the image itself.
 Binaries will be installed into guest directory `/out`. Mount that directory
 with `-v host_dir:/out` to install it into some host directory.
 
-Choose the version to build by setting environment variable `VERSION` to the
+Choose the version to build by setting environment variable `ALACRITTY_VERSION` to the
 appropriate [revision tag](https://github.com/alacritty/alacritty/releases)
 (defaults to `HEAD` for bleeding edge).
 
 Example: install alacritty `v0.10.1` under `~/opt` with (change `OUT_DIR` accordingly):
 ```
 OUT_DIR="$HOME/opt"
-VERSION=v0.10.1
+ALACRITTY_VERSION=v0.10.1
 mkdir -p "${OUT_DIR}"
-docker run -it --rm -v "${OUT_DIR}:/out" -e "VERSION=${VERSION}" bstlang/build-alacritty
+docker run -it --rm \
+  -v "${OUT_DIR}:/out" \
+  -e "ALACRITTY_VERSION=${ALACRITTY_VERSION}" \
+    bstlang/build-alacritty
 unset OUT_DIR
 ```
