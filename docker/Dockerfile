@@ -3,7 +3,7 @@ FROM debian:testing-slim
 ENV DEBIAN_PRIORITY=critical
 ENV DEBIAN_FRONTEND=noninteractive
 
-ENV VERSION="HEAD"
+ENV ALACRITTY_VERSION="HEAD"
 
 RUN apt-get update
 RUN apt-get install -y --no-install-recommends \

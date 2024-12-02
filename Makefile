@@ -16,14 +16,14 @@ image-from-scratch:
 				docker
 
 build: image
-	mkdir -p out \
-		&& docker run -it --rm \
-			-v "`pwd`/out:/out" \
-				build-alacritty
+	docker run -it --rm \
+		-v "/tmp/build-alacritty/out:/out" \
+		-e "ALACRITTY_VERSION=$${ALACRITTY_VERSION:-HEAD}" \
+			build-alacritty
 
 interactive: image
-	mkdir -p out \
-		&& docker run -it --rm \
-			-v "`pwd`/out:/out" \
-			--entrypoint bash \
-				build-alacritty
+	docker run -it --rm \
+		-v "/tmp/build-alacritty/out:/out" \
+		-e "ALACRITTY_VERSION=$${ALACRITTY_VERSION:-HEAD}" \
+		--entrypoint bash \
+			build-alacritty
